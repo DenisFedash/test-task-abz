@@ -1,12 +1,12 @@
 import styled from '@emotion/styled';
-import { primaryColor } from 'commonStyles';
+import { backgroundColor, primaryColor } from 'commonStyles';
 
 export const ContainerHeader = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: auto;
-  border: 1px solid tomato;
+  background-color: ${backgroundColor};
 `;
 
 export const Logo = styled.img`
