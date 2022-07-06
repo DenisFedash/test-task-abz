@@ -4,6 +4,7 @@ import {
   FormField,
   FromContainer,
   Input,
+  InputGroup,
   RadioBtn,
   RadioTitle,
   UploadBtn,
@@ -15,18 +16,20 @@ import RadioGroup from '@mui/material/RadioGroup';
 export const Form = () => {
   return (
     <FromContainer>
-      <H2>Working with POST request</H2>
       <FormField>
-        <Input id="outlined-required" label="Your name" />
+        <H2>Working with POST request</H2>
+        <InputGroup>
+          <Input id="outlined-required" label="Your name" />
 
-        <Input id="outlined-read-only-input" label="Email" />
+          <Input id="outlined-read-only-input" label="Email" />
 
-        <Input
-          style={{ marginBottom: '43px' }}
-          id="outlined-helperText"
-          label="Phone"
-          helperText="+38 (XXX) XXX - XX - XX"
-        />
+          <Input
+            style={{ marginBottom: '43px' }}
+            id="outlined-helperText"
+            label="Phone"
+            helperText="+38 (XXX) XXX - XX - XX"
+          />
+        </InputGroup>
         <RadioTitle>Select your position</RadioTitle>
         <RadioGroup
           defaultValue="frontend developer"
@@ -50,13 +53,17 @@ export const Form = () => {
             label="QA"
           />
         </RadioGroup>
+
         <UploadForm>
           <UploadBtn>Upload</UploadBtn>
-          <Input id="outlined-required" label="Upload your photo" />
+          <Input
+            style={{ width: '2056px' }}
+            id="outlined-required"
+            label="Upload your photo"
+          />
         </UploadForm>
       </FormField>
-
-      <Button>Sign up</Button>
+      <Button style={{ marginBottom: '100px' }}>Sign up</Button>
     </FromContainer>
   );
 };

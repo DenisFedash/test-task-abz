@@ -2,9 +2,19 @@ import styled from '@emotion/styled';
 import { backgroundColor } from 'commonStyles';
 
 export const TeamContainer = styled.div`
-  width: 360px;
+  max-width: 2056px;
   text-align: center;
   margin-bottom: 140px;
+
+  @media screen and (max-width: 767px) {
+    padding: 0 16px 0px 16px;
+  }
+  @media screen and (min-width: 768px) {
+    padding: 0 32px 0px 32px;
+  }
+  @media screen and (min-width: 1024px) {
+    padding: 0 60px 0px 60px;
+  }
 `;
 
 export const H2 = styled.h2`
@@ -13,26 +23,45 @@ export const H2 = styled.h2`
   font-weight: 400;
   font-size: 40px;
   line-height: 1em;
-  padding: 0 16px 50px 16px;
+  margin-bottom: 50px;
+`;
+
+export const CardList = styled.div`
+  margin-bottom: 50px;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-wrap: wrap;
+  }
 `;
 
 export const Card = styled.div`
   background-color: ${backgroundColor};
-  margin: 0 16px 0 16px;
   border-radius: 10px;
-  margin-bottom: 50px;
+  @media screen and (max-width: 767px) {
+    margin-bottom: 20px;
+  }
+
+  @media screen and (min-width: 768px) {
+    margin: 8px;
+    width: calc((100% - 4 * 8px) / 2);
+  }
+
+  @media screen and (min-width: 1024px) {
+    margin: 15px;
+    width: calc((100% - 6 * 15px) / 3);
+  }
 `;
 export const Thumb = styled.div`
-  padding: 15px;
+  padding: 20px;
 `;
 
 export const IMG = styled.img`
-  padding: 20px 0 20px 0;
   width: 70px;
   height: 70px;
 `;
 
 export const TextTeam = styled.p`
+  text-align: center;
   font-family: 'Nunito';
   font-style: normal;
   font-weight: 400;
