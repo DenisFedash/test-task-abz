@@ -10,12 +10,36 @@ import {
 } from './Team.styled';
 
 import ava from '../../img/ava.jpg';
+import { fetchUsers } from 'services/fetchAPI';
+import { useEffect, useState } from 'react';
+import { UserList } from './UserList';
 
 export const Team = () => {
+  const [users, setUsers] = useState(null);
+
+  useEffect(() => {
+    fetchUsers().then(({ users }) => {
+      const usersArray = [];
+      users.map(({ id, name, email, phone, position, photo }) => {
+        const user = {
+          id,
+          name,
+          email,
+          phone,
+          position,
+          photo,
+        };
+        return usersArray.push(user);
+      });
+      setUsers(usersArray);
+    });
+  }, []);
+
   return (
     <TeamContainer>
       <H2>Working with GET request</H2>
-      <CardList>
+      {users && <UserList users={users} />}
+      {/* <CardList>
         <Card>
           <Thumb>
             <IMG src={ava} alt="avatar" />
@@ -46,7 +70,7 @@ export const Team = () => {
             </TextTeam>
           </Thumb>
         </Card>
-      </CardList>
+      </CardList> */}
       <Button>Show more</Button>
     </TeamContainer>
   );

@@ -26,7 +26,7 @@ export const H2 = styled.h2`
   margin-bottom: 50px;
 `;
 
-export const CardList = styled.div`
+export const CardList = styled.ul`
   margin-bottom: 50px;
   @media screen and (min-width: 768px) {
     display: flex;
@@ -34,7 +34,7 @@ export const CardList = styled.div`
   }
 `;
 
-export const Card = styled.div`
+export const Card = styled.li`
   background-color: ${backgroundColor};
   border-radius: 10px;
   @media screen and (max-width: 767px) {
